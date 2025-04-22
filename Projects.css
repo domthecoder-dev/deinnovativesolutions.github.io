@@ -1,0 +1,14 @@
+.grid-container {
+    display: grid; /* Make the container a grid */
+    grid-template-columns: auto auto auto; /* Define 3 columns with automatic width */
+    grid-template-rows: auto auto; /* Define 2 rows with automatic height */
+    gap: 10px; /* Add spacing between grid items (rows and columns) */
+    padding: 10px; /* Optional: Padding inside the grid container */
+  }
+  
+  .grid-item {
+   /* background-color: #ddd; /* Optional: Background color for grid items */
+    padding: 20px;
+    text-align: center;
+    border: 1px solid #333333; /* Optional: Border for grid items */
+  }

@@ -1,0 +1,85 @@
+#Header {
+    font-size: 2rem;
+    font-family: lato, sans-serif;
+    margin-bottom: 3rem;
+}
+
+#Subheader {
+    font-size: 1.5rem;
+    font-family: 'Montserrat', sans-serif;
+    margin-bottom: 4rem;
+}
+
+.Header-Colums-Container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Responsive columns */
+    gap: 20px; /* Spacing between rows and columns */
+  }
+
+  .Header-Colums {
+    padding: 15px;
+    box-sizing: border-box;
+  }
+
+  #Img-ClientMeeting {
+    width: 100%; 
+    height: auto;
+  }
+
+  .content-colums-container {
+    margin-top: 5rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Responsive columns */
+    gap: 20px; /* Spacing between rows and columns */
+  }
+
+  .content-colums {
+    padding: 15px;
+    box-sizing: border-box;
+  }
+
+  #Img-ClientReview {
+    width: 100%; 
+    height: auto;
+  }
+
+
+
+#get-quote button{
+    padding: 1.5rem;
+    font-size: 1.5rem;
+    font-family: 'Montserrat', sans-serif;
+    text-align: center;
+    border-radius: 1.5rem;
+    background-color:white;
+    color: #333333;
+    border: 2px solid #333333;
+    margin-bottom: 4rem;
+}
+
+
+#get-quote-button:hover {
+    text-decoration: underline;
+    color: orange;
+    border-color: orange;
+}
+
+@font-face {
+    font-family: 'Montserrat';
+    src: url('fonts/Montserrat-Regular.woff2') format('woff2'),
+         url('fonts/Montserrat-Regular.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+.Get-Quote { 
+    text-align: center;
+}
+
+/* If the button itself has a specific ID or class */
+/*#get-quote button,
+.get-quote-button {
+    /* display: inline-block; */
+    /* width: auto; /* Let the button size to its content *
+}*/
