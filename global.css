@@ -1,7 +1,7 @@
 body {
     margin: 0;
     padding: 0; /* Add this line to remove any default padding */
-    background-image: url('background-color.jpg');
+    background-image: url('https://deinnovativesolutions.co.za/background-color.jpg');
     background-size: cover; /* This will make the image cover the entire background */
     background-repeat: no-repeat; /* This prevents the image from repeating */
   /* You can add other background properties as needed, like:*/
