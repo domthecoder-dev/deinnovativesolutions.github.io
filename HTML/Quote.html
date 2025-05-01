@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Contact Us</title>
+        <meta name="description" content="This page provides information about basic HTML meta tags and their importance for web development.">
+        <meta name="keywords" content="HTML, meta tags, character set, viewport, title, web development">
+        <link rel="stylesheet" href="../CSS/global.css">
+        <link rel="stylesheet" href="../CSS/Quote.css">
+        <link rel="icon" href="../Images/site-logo.png" type="image/x-icon">
+        
+    </head>
+    <body id="indexpage-body" class="body">
+        <header id="indexpage-header" class="header">
+            <div class="Nav-containter container">
+                <div class="logo-container">
+                    <img src="../Images/Logo-Rect.png" class="nav-top-logo" alt="Your Site Logo">
+                </div>
+                <div class="site-title">
+                    <h1>DE Websites</h1>
+                </div>
+                <nav class="main-menu">
+                    <ul>
+                        <li><a href="../index.html">Home</a></li>
+                        <li><a href="../HTML/aboutus.html">About US</a></li>
+                        <li id="current-page"><a href="">Get A Quote</a></li>
+                    </ul>
+                </nav>
+                <div class="hamburger-menu-toggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </header>
+        <main id="indexpage-main" class="main">
+            <!-- This is where your main content go. Description, contact form etc -->
+            <div id="form-header" class="form-header">
+                <h1 id="form-header-head">Get A Quote/Contact Us</h1>
+                <br>
+                <p class="formheader-content">If you have an enquiry or need a quote please fill in the form below!</p>
+                <p class="formheader-content">You can select if it is a website quote or general enquiry.</p>
+                <p class="formheader-content">After you submit, we will contact you with the answers to your enquiry or with your quote.</p>
+            </div>
+            <div id="form-container" class="form"> <!--Added the .form class here -->
+                <h2 id="formheader">Fill out form below for quote or to ask an enquiry!</h2> 
+                <div id="form">
+                  <form id="myForm" method="post">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="user_name" placeholder="e.g John">
+              
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="user_email" placeholder="e.g user@gmail.com">
+              
+                    <label for="number">Phone Number</label>
+                    <input type="text" id="number" name="user_phonenumber" placeholder="e.g +27 012 345 6789">
+                    <br>
+                    <label for="website-quote">
+                        <input type="radio" id="website-quote" name="group_name" value="Website Quote"> Website Quote
+                    </label><br>
+                      
+                    <label for="enquiry">
+                        <input type="radio" id="enquiry" name="group_name" value="General Enquiry"> General enquiry
+                    </label>
+                    <br>
+                    <label for="message">Message:</label>
+                    <textarea id="message" name="user_message" rows="5" cols="30" placeholder="Enter Message Here..."></textarea>
+                    <button type="submit">Submit</button>
+                    <div id="form-response"></div> </form>
+                  </form>
+                </div>
+              </div>
+              <div class="contact-details">
+                <div id="contact-header">
+                    <h1>Other Contact Methods</h1>
+                </div>
+                <div id="contact-content">
+                    <p>Whatsapp: <a class="link-whatsapp" href="https://wa.me/0839525645" target="_blank" >Whatsapp/DEInnovativeSolutions</a></p>
+                    <p>Phone Number: +27 083 952 5645</p>
+                    <p>Email: Dominic3lliott@gmail.com</p>
+                </div>
+              </div>
+              </main>
+        <script src="../JS/form.js"></script>
+        <footer id="indexpage-footer" class="footer">
+            <!-- this is where the footer goes. Eg Bottom nav -->
+            <div class="footer-container">
+                <h2>DE Innovative Solutions</h2>
+                <nav class="footer-nav">
+                    <ul>
+                        <li><a href="../HTML/blog.html">Blog</a></li>
+                        <li><a href="">FAQ</a></li>
+                        <li><a href="">Password Generator</a></li>
+                        <li><a href="">Tech Support</a></li>
+                    </ul>  
+                </nav>
+            </div>
+        </footer>
+        <div id="made-by">
+            <p >Made By DE Innovative Solutions</p>
+        </div>
+        <script src="../JS/global.js"></script>
+        <script src="../JS/ImageFormat.js"></script>
+    </body>
+</html>

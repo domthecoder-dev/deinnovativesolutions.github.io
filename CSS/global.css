@@ -1,0 +1,344 @@
+body {
+    margin: 0;
+    padding: 0; /* Add this line to remove any default padding */
+    background-image: url('https://deinnovativesolutions.co.za/background-color.jpg');
+    background-size: cover; /* This will make the image cover the entire background */
+    background-repeat: no-repeat; /* This prevents the image from repeating */
+  /* You can add other background properties as needed, like:*/
+     background-position: center center;
+     background-attachment: fixed;
+}
+
+/* Header Styles */
+.header {
+    background-color: #282B30;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%; /* Ensure header takes full width */
+    padding: 1rem;
+    box-sizing: border-box;
+    position: relative;/*Changed /* For absolute positioning of the dropdown */
+    margin: 0; /* Remove any default margins */
+}
+
+#current-page a{
+    color: orange;
+    text-decoration: underline;
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 1200px; /* Limit content width inside header */
+    padding: 0 1rem;
+    margin: 0 auto; /* Center the content */
+    box-sizing: border-box;
+}
+
+.logo-container .nav-top-logo {
+    max-width: 200px;
+    width: 8rem;
+    height: auto;
+}
+
+.site-title h1 {
+    font-size: 1.5rem;
+    font-family: lato, sans-serif;
+    margin: 0;
+}
+
+/* Main Menu Styles (Initially Hidden on Smaller Screens) */
+.main-menu {
+    display: none;
+    font-family: lato, sans-serif;
+}
+
+.main-menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+
+.main-menu li {
+    margin-left: 1.5rem;
+    position: relative;
+}
+
+.main-menu li:first-child {
+    margin-left: 0;
+}
+
+.main-menu ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 0.9rem;
+    padding: 0.5rem 0;
+}
+
+/* Styles for when the menu is open (controlled by JavaScript) */
+.main-menu.open {
+    display: flex !important;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #282B30;
+    width: 100%; /* Make dropdown full width */
+    z-index: 10;
+    align-items: flex-start;
+    padding: 1rem;
+}
+
+.main-menu.open ul {
+    flex-direction: column;
+    width: 100%;
+}
+
+.main-menu.open ul li {
+    margin-left: 0;
+    margin-bottom: 0.5rem;
+    width: 100%;
+}
+
+.main-menu.open ul li a {
+    padding: 0.75rem 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.main-menu.open ul li:last-child a {
+    border-bottom: none;
+}
+
+/* Hamburger Menu Toggle (for smaller screens) */
+.hamburger-menu-toggle {
+    display: none;
+    cursor: pointer;
+    padding: 0.5rem;
+}
+
+.hamburger-menu-toggle span {
+    display: block;
+    height: 3px;
+    width: 25px;
+    background-color: white;
+    margin-bottom: 0.3rem;
+    transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+}
+
+.hamburger-menu-toggle span:last-child {
+    margin-bottom: 0;
+}
+
+.hamburger-menu-toggle.open span:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+}
+
+.hamburger-menu-toggle.open span:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger-menu-toggle.open span:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+}
+
+/* Media Queries for Responsiveness */
+
+/* Small screens (phones) */
+@media (max-width: 600px) {
+    .main-menu {
+        display: none;
+    }
+
+    .hamburger-menu-toggle {
+        display: block;
+    }
+
+    .logo-container .nav-top-logo {
+        max-width: 95px;
+    }
+
+    .container {
+        padding: 0 0.5rem;
+    }
+}
+
+/* Medium screens (tablets) */
+@media (min-width: 601px) and (max-width: 992px) {
+    .main-menu {
+        display: none;
+    }
+
+    .hamburger-menu-toggle {
+        display: block;
+    }
+
+    .logo-container .nav-top-logo {
+        max-width: 180px;
+    }
+
+    .container {
+        padding: 0 1rem;
+    }
+}
+
+/* Large screens (desktops) */
+@media (min-width: 993px) {
+    .main-menu {
+        display: flex !important;
+    }
+
+    .hamburger-menu-toggle {
+        display: none !important;
+    }
+}
+
+.main {
+    color: #333333;
+    padding: 20px;
+    max-width: 1200px; /* This is good for larger screens */
+    margin: 0 auto; /* Center on larger screens */
+    width: 75%; /*Testing Delete if Website goes wonky*/
+}
+
+.footer {
+    background-color: #333333;
+    margin: 0; /* Remove any default margins */
+    padding: 1rem;
+    color: white;
+    text-align: center;
+    font-size: 0.5rem;
+    width: 100%; /* Ensure footer takes full width */
+    box-sizing: border-box; /* Include padding in width */
+}
+
+/* Style for images that have been moved by the JavaScript */
+@media (max-width: 767px) {
+    img.no-float-small-js {
+        float: none !important;
+    }
+
+    .Contains-Img {
+        display: flex;
+        flex-direction: row; /* Default for larger screens */
+        align-items: flex-start; /* Adjust as needed */
+    }
+
+    .Contains-Img > * {
+        flex: 1 1 auto; /* Allow items to grow and shrink */
+        margin-right: 10px; /* Adjust spacing */
+    }
+
+    .Contains-Img {
+        flex-direction: column; /* Stack vertically on smaller screens */
+    }
+
+    .Contains-Img > * {
+        width: 100%; /* Take full width when stacked */
+        margin-right: 0;
+        margin-bottom: 10px; /* Add vertical spacing */
+    }
+
+    .order-1 {
+        order: 1;
+    }
+
+    .order-2 {
+        order: 2; /* Image appears after the title */
+        margin: 0 auto 10px; /* Center image */
+        float: none !important; /* Ensure no float */
+        display: block;
+    }
+
+    .order-3 {
+        order: 3;
+    }
+}
+
+/* Styles for the "Meet the Team" section avatars */
+#Meet-the-team .flex-container {
+    display: flex;
+    flex-direction: column; /* Keep container as column for overall stacking of team members */
+    gap: 20px; /* Adjust spacing between team member sections */
+}
+
+#Meet-the-team .flex-row {
+    display: flex;
+    flex-direction: row; /* Default to row for larger screens (avatar beside text) */
+    align-items: center; /* Vertically align avatar and text on larger screens */
+    gap: 1rem; /* Spacing between avatar and text on larger screens */
+}
+
+#Meet-the-team .flex-item.Contains-Img {
+    width: auto; /* Let image determine width */
+}
+
+#Meet-the-team #avatar {
+    display: block;
+    max-width: 100%; /* Adjust as needed */
+    height: auto;
+    margin-bottom: 0; /* Remove bottom margin that might push text down */
+}
+
+#Meet-the-team .flex-item:not(.Contains-Img) {
+    text-align: left;
+}
+
+/* Media query for smaller screens (where you likely want avatar above text) */
+@media (max-width: 767px) {
+    #Meet-the-team .flex-row {
+        flex-direction: column; /* Stack avatar above text on smaller screens */
+        align-items: center; /* Center the avatar above the text */
+    }
+
+    #Meet-the-team .flex-item.Contains-Img {
+        margin-bottom: 10px; /* Add space between avatar and text on smaller screens */
+    }
+}
+
+/* Footer CSS */
+.footer-container {
+    display: flex; /* Enable flexbox for alignment */
+    justify-content: space-between; /* Push items to opposite ends */
+    align-items: center; /* Vertically align items in the center */
+  }
+
+  .footer-container h2 {
+    font-size: 2em;
+  }
+  
+  .footer-nav ul {
+    list-style: none; /* Remove bullet points */
+    padding: 0;
+    margin: 0;
+    text-align: left; /* Align the list items to the right */
+    font-size: 2em;
+  }
+  
+  .footer-nav li {
+    margin-bottom: 5px; /* Add some space between the links */
+    
+  }
+  
+  .footer-nav a {
+    text-decoration: none; /* Remove underlines from links */
+    color: white; /* Example link color */
+    
+  }
+
+  .footer-nav a:hover {
+    color: orange;
+    text-decoration: underline;
+  }
+
+  #made-by {
+    text-align: center;
+    font-size: 0.5em;
+    margin: 0;
+    background-color: white;
+    padding: 0.5px;
+  }
