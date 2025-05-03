@@ -1,0 +1,158 @@
+/* Quote.css */
+
+.quote-page-main {
+  margin-top: 15px;
+  padding-top: 6.9rem;
+  padding-bottom: 2rem;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.quote-page-main .container {
+  width: 100%;
+  max-width: 1500px;
+  padding: 2rem;
+  box-sizing: border-box;
+  display: flex; /* Enable flexbox for the container */
+  gap: 2rem; /* Space between the form and contact details */
+  align-items: flex-start; /* Align items to the top */
+}
+
+.form-header {
+  text-align: center; /* Align header text to the left in this context */
+  margin-bottom: 20px;
+  flex: 1; /* Allow it to take up available space */
+}
+
+#form-header-head {
+  font-family: 'Lato', sans-serif;
+  text-decoration: underline;
+  font-size: 1.5rem;
+  padding-top: 20px;
+  color: #333333;
+  margin-bottom: 10px;
+}
+
+.formheader-content {
+  margin-bottom: 10px;
+  color: #555;
+  font-family: 'Montserrat', sans-serif;
+  line-height: 1.6;
+}
+
+#form-container {
+  flex: 2; /* Give the form more space */
+  padding: 20px;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+  background-color: white;
+  text-align: left;
+  font-family: 'Montserrat', sans-serif;
+}
+
+#formheader {
+  font-size: 1.5rem;
+  color: #333;
+  margin-bottom: 15px;
+  font-family: 'Lato', sans-serif;
+  text-align: center !important;
+}
+
+#form div {
+  margin-bottom: 15px;
+}
+
+label {
+  display: block;
+  font-family: 'Montserrat', sans-serif;
+  margin-bottom: 5px;
+  font-weight: bold;
+  color: #333;
+  text-align: left;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="number"],
+textarea {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #333;
+  background-color: white;
+  box-sizing: border-box;
+  margin-bottom: 20px;
+  color: #333;
+  font-size: 1rem;
+  font-family: 'Montserrat', sans-serif;
+}
+
+textarea {
+  height: 150px;
+}
+
+button[type="submit"] {
+  padding: 15px 30px;
+  background-color: white;
+  color: #333;
+  border: 1px solid #333;
+  border-radius: 0.3rem;
+  font-size: 1.1rem;
+  cursor: pointer;
+  width: auto;
+  transition: background-color 0.3s ease;
+  font-family: 'Montserrat', sans-serif;
+}
+
+button[type="submit"]:hover {
+  background-color: #333;
+  color: orange;
+  border-color: orange;
+}
+
+.contact-details {
+  flex: 1; /* Allow it to take up available space */
+  padding: 30px;
+  box-sizing: border-box;
+  text-align: center;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.contact-details #contact-header h1 {
+  font-size: 1.5rem;
+  color: #333;
+  margin-bottom: 15px;
+  font-family: 'Lato', sans-serif;
+}
+
+.contact-details #contact-content p {
+  margin-bottom: 10px;
+  color: #555;
+  line-height: 1.6;
+}
+
+.contact-details #contact-content p a {
+  color: orange;
+  text-decoration: none;
+  transition: text-decoration 0.3s ease;
+}
+
+.contact-details #contact-content p a:hover {
+  text-decoration: underline;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+  .quote-page-main .container {
+      flex-direction: column; /* Stack form and contact details on smaller screens */
+      align-items: stretch; /* Make them take full width */
+      gap: 1rem;
+  }
+
+  .form-header {
+      text-align: center; /* Center header on smaller screens */
+  }
+}
