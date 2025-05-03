@@ -7,7 +7,7 @@
     align-items: center; /* Center items horizontally within main */
     padding-top: 6.6rem; /* Adjust top padding for fixed header */
     padding-bottom: 2rem;
-    width: 85%; /* Allow some margin on the sides */
+    width: 80%; /* Allow some margin on the sides */
     margin: 0 auto; /* Center the main container itself */
     box-sizing: border-box; /* Include padding and border in width */
 }
