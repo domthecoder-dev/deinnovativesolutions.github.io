@@ -1,156 +1,179 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>About DE Innovative Solutions</title>
-        <meta name="description" content="Learn more about DE Innovative Solutions and our passion for crafting expert web solutions.">
-        <meta name="keywords" content="DE Innovative Solutions, about us, web development expertise, custom websites, team">
-        <link rel="stylesheet" href="../CSS/global.css">
-        <link rel="stylesheet" href="../CSS/aboutus.css">
-        <link rel="icon" href="../Images/site-logo.png" type="image/x-icon">
 
-    </head>
-    <body id="aboutuspage-body" class="body">
-        <header id="indexpage-header" class="header">
-            <div class="Nav-containter container">
-                <div class="logo-container">
-                    <img src="../Images/Logo-Rect.png" class="nav-top-logo" alt="DE Innovative Solutions Logo">
-                </div>
-                <nav class="main-menu">
-                    <ul>
-                        <li ><a href="../index.html">Home</a></li>
-                        <li id="current-page"><a href="#">About US</a></li>
-                        <li><a href="../HTML/pricing.html">Pricing</a></li>
-                        <li><a href="../HTML/blog.html">Blog</a></li>
-                        <li><a href="../HTML/FAQ.html">FAQ</a></li>
-                        <li><a href="../HTML/password-gen.html">Password Generator</a></li>
-                        <!--<li><a href="">Tech Support</a></li>-->
-                        <li class="quote-link"><a href="../HTML/Quote.html">Get A Quote</a></li>
-                        <li class="quote-button-li">
-                            <a href="../HTML/Quote.html" class="get-quote-button">Get A Quote</a>
-                        </li>
-                    </ul>
-                </nav>
-                <div class="hamburger-menu-toggle">
-                    <span></span>
-                    <span></span>
-                    <span></span>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+    <meta name="description"
+        content="Get a quote for our web development services or send us a general enquiry. Fill out the form below!">
+    <meta name="keywords" content="web development quote, website enquiry, contact us, get a price">
+    <link rel="stylesheet" href="../CSS/global.css">
+    <link rel="stylesheet" href="../CSS/Quote.css">
+    <link rel="icon" href="../Images/site-logo.png" type="image/x-icon">
+
+</head>
+
+<body id="quote-page-body" class="body">
+    <header id="indexpage-header" class="header">
+        <div class="Nav-containter container">
+            <div class="logo-container">
+                <img src="../Images/Logo-Rect.png" class="nav-top-logo" alt="DE Innovative Solutions Logo">
+            </div>
+            <nav class="main-menu">
+                <ul>
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="../HTML/aboutus.html">About US</a></li>
+                    <li><a href="../HTML/pricing.html">Pricing</a></li>
+                    <li><a href="../HTML/blog.html">Blog</a></li>
+                    <li><a href="../HTML/FAQ.html">FAQ</a></li>
+                    <li><a href="../HTML/password-gen.html">Password Generator</a></li>
+                    <!--<li><a href="">Tech Support</a></li>-->
+                    <li class="quote-link" id="current-page"><a href="#">Get A Quote</a></li>
+                    <li class="quote-button-li">
+                        <a href="#" class="get-quote-button">Get A Quote</a>
+                    </li>
+                </ul>
+            </nav>
+            <div class="hamburger-menu-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </header>
+    <main id="indexpage-main" class="main quote-page-main">
+        <div class="container">
+            <div id="form-header" class="form-header">
+                <h1 id="form-header-head">Get A Quote OR Contact Us</h1>
+                <br>
+                <p class="formheader-content">Have a question or need a website quote? Simply fill out the form!</p>
+                <p class="formheader-content">Select the relevant option, and we'll get back to you with the information
+                    you need.</p>
+            </div>
+            <div id="form-container" class="form">
+                <h2 id="formheader"><u>Tell Us About Your Needs</u></h2>
+                <div id="form">
+                    <form id="myForm" method="post">
+                        <label for="name">Name:</label>
+                        <input type="text" id="name" name="user_name" placeholder="e.g John">
+
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" name="user_email" placeholder="e.g user@gmail.com">
+
+                        <label for="number">Phone Number</label>
+                        <input type="text" id="number" name="user_phonenumber" placeholder="e.g +27 012 345 6789">
+                        <p><b id="radio-button-title"></b></p>
+                        <div id="radio-button" class="enquire-or-quote">
+                            <label for="website-quote">
+                                <input type="radio" id="website-quote" name="group_name" value="Website Quote"> Website
+                                Quote
+                            </label><br>
+                            <label for="enquiry">
+                                <input type="radio" id="enquiry" name="group_name" value="General Enquiry"> General
+                                enquiry
+                            </label>
+                        </div>
+
+                        <div class="website-type-inputs" id="website-type-inputs">
+                            <label for="website-type-foundation">
+                                <input type="radio" id="website-type-foundation" name="website-type" value="Foundation">
+                                Foundation Website
+                            </label><br>
+                            <label for="website-type-growth">
+                                <input type="radio" id="website-type-growth" name="website-type" value="Growth"> Growth
+                                Website
+                            </label><br>
+                            <label for="website-type-evolved">
+                                <input type="radio" id="website-type-evolved" name="website-type" value="Evolved">
+                                Evolved Website
+                            </label><br>
+                        </div>
+
+                        <div class="website-questionaire" id="website-questionaire">
+                            <label for="compname">
+                                Company Name:</label>
+                            <input type="email" id="compname" name="company-name"
+                                placeholder="e.g DE Innovative Solutions">
+
+                            <div class="yn-website-inspo-container">
+                                <p><b>Do you have any reference websites that showcase the kind of look and feel you
+                                        envision for your project?</b></p>
+                                <label for="y-website-inspo">
+                                    <input type="radio" id="y-website-inspo" name="yn-website-inspo" value="Yes"> Yes
+                                </label><br>
+                                <label for="n-website-inspo">
+                                    <input type="radio" id="n-website-inspo" name="yn-website-inspo" value="No"> No
+                                </label>
+                            </div>
+                            <div class="inspo-website" id="inspo-website">
+                                <label for="inspo-website-url">
+                                    <!--Radio Group for if they have an inspo website, if yes have input field appear asking for it-->
+                                    Enter the website you would like your website to feature?</label>
+                                <input type="text" id="inspo-website-url" name="inspo-website"
+                                    placeholder="examplewebsite.com">
+                                <label for="features-copy">What features do you like about this website?</label>
+                                <textarea id="features-copy" class="feature-textarea" name="features-copy" rows="5" cols="30"
+                                    placeholder="e.g. I like the gallery set up..."></textarea>
+                            </div>
+                            <div class="domain-name-yn">
+                                <p><b>Do you have an exisitng website?</b></p>
+                                <label for="y-domain-name">
+                                    <input type="radio" id="y-domain-name" name="yn-domain-name" value="yes"> Yes
+                                </label>
+                                <label for="n-domain-name">
+                                    <input type="radio" id="n-domain-name" name="yn-domain-name" value="no"> No
+                                </label>
+                            </div>
+                            <div class="domain-name" id="domain-name">
+                                <label for="web-url">Please enter your website link below:</label>
+                                <input type="text" id="web-url" name="web-url" placeholder="examplewebsite.com">
+                            </div>
+
+                            <label
+                                for="page-num"><!--Radio group for domain name: yes or no, if yes have an input field asking for it-->
+                                How many pages do you want on your website?</label>
+                            <input type="number" id="page-num" name="page-num"
+                                placeholder="example: 5 (just input number)">
+                            <label
+                                for="num-month-support"><!--Radio group for domain name: yes or no, if yes have an input field asking for it-->
+                                How many months of support do you want after launch? </label>
+                            <input type="number" id="num-month-support" name="num-month-support"
+                                placeholder="Up to 12 months">
+                        </div>
+                        <label for="message">Message:</label>
+                        <textarea id="message" name="user_message" rows="5" cols="30"
+                            placeholder="Enter Message Here..."></textarea>
+                        <div class="buttons">
+                            <button class="formbtns" type="submit">Submit</button>
+                            <button class="formbtns" type="reset">Restart</button>
+                        </div>
+
+                        <div id="form-response"></div>
+                    </form>
                 </div>
             </div>
-        </header>
-        <main id="indexpage-main" class="main about-us-main">
-            <div class="container">
-                <section id="Meet-the-team">
-                    <h1 class="section-header">Meet the Team</h1>
-                    <div class="team-member">
-                        <div class="avatar-container">
-                            <img src='../Images/Samantha-Avatar.jpg' class='avatar' alt="Samantha Avatar">
-                        </div>
-                        <div class="bio">
-                            <h3>Samantha</h3>
-                            <p class="body-text">
-                                Your dedicated point of contact and the administrator
-                                who keeps our web development process seamless.
-                                She is committed to supporting you through every step,
-                                ensuring you get the ideal website to meet your online
-                                aspirations...
-                            </p>
-                        </div>
-                    </div>
-                    <div class="team-member">
-                        <div class="avatar-container">
-                            <img src='../Images/Dominic-Avatar.jpg' class="avatar" alt="Dominic Avatar">
-                        </div>
-                        <div class="bio">
-                            <h3>Dominic</h3>
-                            <p class="body-text">
-                                Your go-to Website Developer for personalised solutions. He is committed to hard
-                                work and building a website that perfectly reflects your preferences.
-                            </p>
-                        </div>
-                    </div>
-                </section>
-                <section class="about-intro">
-                    <div class="image-column">
-                        <img src="../Images/Girlsittingatcomputercoding.jpg" id="Img-GirlCoding" alt="Girl coding on a computer">
-                    </div>
-                    <div class="text-column">
-                        <h1 class="page-header">Crafting Your Digital Presence with Expertise and Care</h1>
-                        <p class="body-text">
-                            At DE Innovative Solutions, we are passionate about building effective and
-                            visually stunning websites that help our clients achieve their
-                            online goals. Unlike DIY platforms, we offer a personalised,
-                            hands-on approach, leveraging the power of WordPress and reliable
-                            hosting from Xneelo to create a unique digital presence tailored
-                            to your specific needs.
-                        </p>
-                        <p class="body-text">
-                            For over five years, I, Dominic the founder of DE Innovative Solutions, have been dedicated
-                            to the art and science of web development. I believe that a website is
-                            more than just a digital address – it is a crucial tool for communication,
-                            growth, and establishing your brand identity. That is why I go beyond the
-                             basics, utilizing coding languages like CSS and HTML to implement advanced
-                             meta tags for enhanced SEO and to create truly personalised and customised
-                             designs that stand out.
-                        </p>
-                        <p class="body-text">
-                            My commitment to excellence is backed by certifications in Responsive Web Design
-                            and JavaScript from freeCodeCamp.org, ensuring that your website is not only beautiful
-                            but also user-friendly across all devices and built with modern web standards in mind.
-                        </p>
-                        <p class="body-text">
-                            Understanding that exceptional customer care is paramount, I work closely with a dedicated
-                            assistant who is committed to providing you with seamless support and addressing any questions
-                            or concerns you may have throughout the website development process and beyond.
-                        </p>
-                    </div>
-                </section>
-
-                <section class="what-sets-apart">
-                        <div class="text-column">
-                        <h1 class="section-header">What Sets Us Apart:</h1>
-                        <ul class="features-list">
-                            <li>Expert WordPress Development: We harness the flexibility and power of WordPress to build robust and scalable websites.</li>
-                            <li>Reliable Xneelo Hosting: We partner with Xneelo, a trusted hosting provider, to ensure your website is fast, secure, and always accessible.</li>
-                            <li>Personalized Customization: We go beyond themes, using CSS and HTML to create unique designs and implement specific functionalities tailored to your brand.</li>
-                            <li>SEO Optimization from the Ground Up: We integrate strategic meta tags and semantic HTML to improve your website's visibility in search engine results.</li>
-                            <li>Responsive Design Expertise: Your website will look and function flawlessly on desktops, tablets, and mobile devices.</li>
-                            <li>Dedicated Customer Care: Our team is committed to providing you with exceptional support every step of the way.</li>
-                            <li>Proven Experience: With over five years of experience, we have a track record of delivering successful web solutions.</li>
-                        </ul>
-                    </div>
-                    <div class="image-column">
-                        <img src="../Images/HandsCodingOnLaptop.jpg" class="coding-laptop-img" alt="Hands coding on a laptop">
-                    </div>
-                
-                </section>
-
-                <section class="websites-we-build">
-                    <h1 class="section-header">What Websites Do we Build?</h1>
-                    <p class="body-text">
-                        We build all kinds of websites, including:
-                        <ul class="list">
-                            <li class="list-item">Blogs</li>
-                            <li class="list-item">Personal Profiles</li>
-                            <li class="list-item">Galleries</li>
-                            <li class="list-item">E-Commerce</li>
-                            <li class="list-item">Contact Forms</li>
-                            <li class="list-item">And More!</li>
-                        </ul>
-                    </p>
-                    <p class="body-text">
-                        Contact us for your <a href="../HTML/Quote.html">personalised quote</a>
-                    </p>
-                </section>
+            <div class="contact-details">
+                <div id="contact-header">
+                    <h1><u>Other Contact Methods</u></h1>
+                </div>
+                <div id="contact-content">
+                    <p>Whatsapp: <a class="link-whatsapp" href="https://wa.me/0839525645"
+                            target="_blank">Whatsapp/DEInnovativeSolutions</a></p>
+                    <p>Phone Number: +27 083 952 5645</p>
+                    <p>Email: Dominic3lliott@gmail.com</p>
+                </div>
             </div>
-        </main>
-        <footer id="indexpage-footer" class="footer">
+        </div>
+    </main>
+    <footer id="indexpage-footer" class="footer">
         <div id="made-by">
             <p>&copy; Made By DE Innovative Solutions</p>
         </div>
     </footer>
-        <script src="../JS/global.js"></script>
-        <!--<script src="../JS/ImageFormat.js"></script>-->
-    </body>
+    <script src="../JS/form.js"></script>
+    <script src="../JS/global.js"></script>
+    <script src="../JS/ImageFormat.js"></script>
+</body>
+
 </html>
