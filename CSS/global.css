@@ -1,305 +1,332 @@
-/* global.css */
+/* global.css - Enhanced for Cross-Browser Compatibility */
+
+/* Root element for consistent box-sizing */
+:root {
+  box-sizing: border-box;
+}
+
+*,
+::before,
+::after {
+  box-sizing: inherit;
+}
 
 body {
-    margin: 0;
-    padding: 0;
-    background-image: url('../Images/background-color.jpg');
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-attachment: fixed;
-    font-family: 'Montserrat', sans-serif; /* Default font */
-    color: #333; /* Default text color */
+  margin: 0; /* Removed !important as it's generally not needed with good practices */
+  padding: 0; /* Removed !important */
+  background-image: url("../Images/background-color.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center; /* Shorthand for center center */
+  background-attachment: fixed;
+  font-family: 'Montserrat', sans-serif; /* Default font */
+  color: #F3F3F3; /* Default text color */
+  line-height: 1.5; /* Improve text readability */
+  min-height: 100vh; /* Ensure body takes at least the full viewport height */
 }
 
 /* Header Styles */
 .header {
-    background-color: #282B30 !important;
-    color: white !important;
-    display: flex !important;
-    align-items: center !important;
-    justify-content: space-between !important;
-    width: 100% !important;
-    padding: 1rem !important;
-    box-sizing: border-box !important;
-    position: fixed !important;
-    top: 0 !important;
-    z-index: 1000 !important;
-    margin: 0 !important;
+  background-color: #282B30; /* Removed !important */
+  color: white; /* Removed !important */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%; /* Already good */
+  padding: 0 1rem; /* Reduce the top and bottom padding */
+  position: fixed;
+  top: 0; /* Already good */
+  z-index: 1000; /* Already good */
+  margin: 0; /* Removed !important */
 }
 
 #current-page a {
-    color: orange;
-    text-decoration: underline;
+  color: orange;
+  text-decoration: underline;
 }
 
 .container {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    width: 100%;
-    max-width: 1200px;
-    padding: 0 1rem !important;
-    margin: 0 auto;
-    box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  height: auto;
+  max-width: 1200px;
+  padding: 1rem 1rem; /* Removed !important */
+  margin: 0 auto;
+
 }
 
 .logo-container .nav-top-logo {
-    max-width: 200px;
-    width: 8rem !important;
-    height: auto;
+  max-width: none; /* Remove the max-width constraint */
+  width: auto; /* Ensure the width adjusts based on the image's aspect ratio */
+  height: auto; /* Allow the height to scale proportionally */
+  display: block;
+  margin: 0;
+
+  max-height: 80px; /* Adjust this value to control the maximum height of the logo */
 }
 
 .site-title h1 {
-    font-size: 1.5rem !important;
-    font-family: 'Lato', sans-serif;
-    margin: 0;
+  font-size: 1.5rem; /* Removed !important */
+  font-family: 'Lato', sans-serif;
+  margin: 0;
 }
 
 /* Main Menu Styles */
 .main-menu {
-    display: none; /* Hidden by default on smaller screens */
-    font-family: 'Lato', sans-serif;
+  display: none; /* Hidden by default on smaller screens */
+  font-family: 'Lato', sans-serif;
 }
 
 .main-menu ul {
-    list-style: none;
-    padding: 0;
-    margin: 0 !important;
-    display: flex;
-    align-items: center; /* Vertically align items, including the button */
+  list-style: none;
+  padding: 0;
+  margin: 0; /* Removed !important */
+  display: flex;
+  align-items: center; /* Vertically align items, including the button */
 }
 
 .main-menu li {
-    margin-left: 1.5rem !important;
-    position: relative;
+  margin-left: 1.5rem; /* Removed !important */
+  position: relative;
 }
 
 .main-menu li:first-child {
-    margin-left: 0 !important;
+  margin-left: 0; /* Removed !important */
 }
 
 .main-menu ul li a {
-    color: white;
-    text-decoration: none;
-    font-size: 0.9rem;
-    padding: 0.5rem 0;
+  color: white;
+  text-decoration: none;
+  font-size: 0.9rem;
+  padding: 0.5rem 0;
+  display: block; /* Ensure full link area is clickable */
 }
 
 /* Style for the "Get A Quote" button in the nav */
 .quote-button-li {
-    margin-left: 2rem !important; /* Add some extra spacing */
+  margin-left: 2rem; /* Removed !important */
 }
 
 .get-quote-button {
-    background-color: orange; /* Example button color */
-    color: white !important; /* Override link color */
-    padding: 0.75rem 0.5rem !important;
-    border-radius: 1.5rem;
-    text-decoration: none !important;
-    font-weight: bold;
-    box-shadow: 0 0 0 rgba(255, 165, 0, 0.7); /* Initial shadow for pulse */
-    animation: pulse 1.5s infinite; /* Apply the pulse animation */
-    font-size: 1em !important; /* Example smaller size */
+  background-color: orange; /* Example button color */
+  color: white; /* Removed !important */
+  padding: 0.75rem 0.5rem !important; /* Removed !important */
+  border-radius: 1.5rem;
+  text-decoration: none; /* Removed !important */
+  font-weight: bold;
+  box-shadow: 0 0 0 rgba(255, 165, 0, 0.7); /* Initial shadow for pulse */
+  animation: pulse 1.5s infinite; /* Apply the pulse animation */
+  font-size: 1em; /* Removed !important */
+  display: inline-block; /* Helps with consistent padding */
 }
 
 .quote-link {
-    display: none;
+  display: none;
+  color: white;
 }
 
 @keyframes pulse {
-    0% {
-        box-shadow: 0 0 0 0 rgba(255, 165, 0, 0.7);
-    }
-    70% {
-        box-shadow: 0 0 0 10px rgba(255, 165, 0, 0);
-    }
-    100% {
-        box-shadow: 0 0 0 0 rgba(255, 165, 0, 0);
-    }
+  0% {
+    box-shadow: 0 0 0 0 rgba(255, 165, 0, 0.7);
+  }
+  70% {
+    box-shadow: 0 0 0 10px rgba(255, 165, 0, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(255, 165, 0, 0);
+  }
 }
 
 .get-quote-button:hover {
-    opacity: 0.9;
+  opacity: 0.9;
 }
 
 /* Styles for when the menu is open (controlled by JavaScript) */
 .main-menu.open {
-    display: flex !important;
-    flex-direction: column;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    background-color: #282B30;
-    width: 100%; /* Make dropdown full width */
-    z-index: 10;
-    align-items: flex-start;
-    padding: 1rem;
+  display: flex !important;
+  flex-direction: column;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #282B30;
+  width: 100%; /* Make dropdown full width */
+  z-index: 10;
+  align-items: flex-start;
+  padding: 1rem;
 }
 
 .main-menu.open ul {
-    flex-direction: column;
-    width: 100%;
+  flex-direction: column;
+  width: 100%;
 }
 
 .main-menu.open ul li {
-    margin-left: 0;
-    margin-bottom: 0.5rem;
-    width: 100%;
+  margin-left: 0;
+  margin-bottom: 0.5rem;
+  width: 100%;
 }
 
 .main-menu.open ul li a {
-    padding: 0.75rem 0;
+  padding: 0.75rem 0;
+  display: block; /* Ensure full link area is clickable */
 }
 
 .main-menu.open ul li:last-child a {
-    border-bottom: none;
+  border-bottom: none;
 }
 
 /* Hamburger Menu Toggle (for smaller screens) */
 .hamburger-menu-toggle {
-    display: none;
-    cursor: pointer;
-    padding: 0.5rem;
+  display: none;
+  cursor: pointer;
+  padding: 0.5rem;
 }
 
 .hamburger-menu-toggle span {
-    display: block;
-    height: 3px;
-    width: 25px;
-    background-color: white;
-    margin-bottom: 0.3rem;
-    transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+  display: block;
+  height: 3px;
+  width: 25px;
+  background-color: white;
+  margin-bottom: 0.3rem;
+  transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
 }
 
 .hamburger-menu-toggle span:last-child {
-    margin-bottom: 0;
+  margin-bottom: 0;
 }
 
 .hamburger-menu-toggle.open span:nth-child(1) {
-    transform: translateY(8px) rotate(45deg);
+  transform: translateY(8px) rotate(45deg);
 }
 
 .hamburger-menu-toggle.open span:nth-child(2) {
-    opacity: 0;
+  opacity: 0;
 }
 
 .hamburger-menu-toggle.open span:nth-child(3) {
-    transform: translateY(-8px) rotate(-45deg);
+  transform: translateY(-8px) rotate(-45deg);
 }
 
 /* Footer Styles */
 .footer {
-    background-color: #282B30 !important;
-    margin: 0;
-    padding: 2rem 1rem; /* Increased padding for better visual separation */
-    color: white;
-    text-align: center;
-    font-size: 0.8rem; /* Slightly increased font size */
-    width: 100%;
-    box-sizing: border-box;
+  background-color: #282B30; /* Removed !important */
+  color: white; /* Removed !important */
+  display: flex;
+  justify-content: center;
+  width: 100%; /* Removed !important */
+  padding: 1rem; /* Removed !important */
+  margin: 0; /* Removed !important */
 }
 
 /* Style for the "Made By" section */
 #made-by {
-    text-align: center;
-    font-size: 0.7rem; /* Slightly increased font size */
-    margin: 0;
-    background-color: #282B30;
-    color: white;
-    padding: 0.5rem; /* Added some padding */
+  text-align: center;
+  font-size: 0.7rem; /* Slightly increased font size */
+  margin: 0;
+  background-color: #282B30;
+  color: white;
+  padding: 0.5rem; /* Added some padding */
 }
 
 /* Media Queries for Responsiveness (Header & Navigation) */
 
 /* Small screens (phones) */
 @media (max-width: 600px) {
-    .header {
-        position: relative; /* Ensure hamburger menu is clickable */
-    }
+  .header {
+    position: relative; /* Ensure hamburger menu is clickable */
+  }
 
-    .main-menu {
-        display: none;
-    }
+  .main-menu {
+    display: none;
+  }
 
-    .hamburger-menu-toggle {
-        display: block;
-    }
+  .hamburger-menu-toggle {
+    display: block;
+  }
 
-    .logo-container .nav-top-logo {
-        content: url(../Images/mobile-logo.png);
-        max-width: 45px;
-    }
+  .logo-container .nav-top-logo {
+    content: url(../Images/mobile-logo.png);
+    max-width: 80px;
+    display: block; /* Prevent potential extra space below image */
+  }
 
-    .container {
-        padding: 0 0.5rem;
-    }
+  .container {
+    padding: 0.5rem 0.5rem;
+  }
 
-    .main {
-        padding-top: 5rem !important; /* Adjust main padding for fixed header */
-        padding-bottom: 15px;
-        width: 95%; /* Take up more width on smaller screens */
-    }
+  .main {
+    padding-top: 2rem !important; /* Adjust main padding for fixed header */
+    padding-bottom: 15px;
+    width: 95%; /* Take up more width on smaller screens */
+  }
 
-    .main-menu.open {
-        padding: 1rem 0.5rem; /* Adjust padding for mobile menu */
-    }
+  .main-menu.open {
+    padding: 1rem 0.5rem; /* Adjust padding for mobile menu */
+  }
 
-    .main-menu.open ul li a {
-        padding: 0.75rem 0;
-        /*border-bottom: 1px solid #444; /* Add a separator for better readability */
-    }
+  .main-menu.open ul li a {
+    padding: 0.75rem 0;
+    display: block; /* Ensure full link area is clickable */
+    /* border-bottom: 1px solid #444; /* Add a separator for better readability */
+  }
 
-    /*.main-menu.open ul li:last-child a {
-        border-bottom: none;
+  /* .main-menu.open ul li:last-child a {
+      border-bottom: none;
     }*/
 
-    .quote-link {
-        display: block;
-    }
+  .quote-link {
+    display: block;
+  }
 
-    .quote-button-li {
-        display: none;
-    }
-
+  .quote-button-li {
+    display: none;
+  }
 }
 
 /* Medium screens (tablets) */
 @media (min-width: 601px) and (max-width: 992px) {
-    .main-menu {
-        display: none;
-    }
+  .main-menu {
+    display: none;
+  }
 
-    .hamburger-menu-toggle {
-        display: block;
-    }
+  .hamburger-menu-toggle {
+    display: block;
+  }
 
-    .logo-container .nav-top-logo {
-        max-width: 180px;
-    }
+  .logo-container .nav-top-logo {
+    max-width: 180px;
+    display: block; /* Prevent potential extra space below image */
+  }
 
-    .container {
-        padding: 0 1rem;
-    }
+  .container {
+    padding: 0 1rem;
+  }
 
-    .main {
-        padding-top: 6rem !important; /* Adjust main padding for fixed header */
-        width: 85%;
-    }
+  .main {
+    padding-top: 3rem !important; /* Adjust main padding for fixed header */
+    width: 85%;
+  }
+
+  .footer {
+    width: 100% !important;
+    margin: 0 !important;
+  }
 }
 
 /* Large screens (desktops) */
 @media (min-width: 993px) {
-    .main-menu {
-        display: flex !important;
-    }
+  .main-menu {
+    display: flex !important;
+  }
 
-    .hamburger-menu-toggle {
-        display: none !important;
-    }
+  .hamburger-menu-toggle {
+    display: none !important;
+  }
 
-    .main {
-        padding-top: 6.6rem !important;
-        width: 77%;
-    }
+  .main {
+    padding-top: 6.6rem !important;
+    width: 77%;
+  }
 }
