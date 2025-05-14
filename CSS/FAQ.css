@@ -1,215 +1,225 @@
-/* CSS/FAQ.css */
+/* CSS/FAQ.css - Enhanced for Cross-Browser Compatibility */
 
 /* Basic styling for the main container */
 .main.kanban-layout {
-    display: flex;
-    flex-direction: column; /* Stack sections vertically */
-    align-items: center; /* Center items horizontally within main */
-    padding-top: 6.6rem; /* Adjust top padding for fixed header */
-    padding-bottom: 2rem;
-    width: 80%; /* Allow some margin on the sides */
-    margin: 0 auto; /* Center the main container itself */
-    box-sizing: border-box; /* Include padding and border in width */
+  display: flex;
+  flex-direction: column; /* Stack sections vertically */
+  align-items: center; /* Center items horizontally within main */
+  padding-top: 6.6rem; /* Adjust top padding for fixed header */
+  padding-bottom: 2rem;
+  width: 80%; /* Allow some margin on the sides */
+  margin: 0 auto; /* Center the main container itself */
+  box-sizing: border-box; /* Include padding and border in width */
+  /* Vendor prefixes for older flexbox (likely not needed) */
+  /* -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+     -webkit-flex-direction: column;
+     -ms-flex-direction: column;
+     -webkit-align-items: center;
+     -ms-flex-align: center; */
 }
 
 .main.kanban-layout .container.main-content {
-    width: 100%;
-    max-width: 1500px;
-    padding: 2rem;
-    box-sizing: border-box;
-    margin: 0 auto;
+  width: 100%;
+  max-width: 1500px;
+  padding: 2em;
+  box-sizing: border-box;
+  margin: 0 auto;
 }
 
 /* Layout for the Kanban board on larger screens */
 .main.kanban-layout .kanban-board {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Responsive columns */
-    gap: 1.5rem; /* Spacing between columns */
-    padding: 2rem 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Responsive columns */
+  gap: 1.5rem; /* Spacing between columns */
+  padding: 2rem 0;
 }
 
-/* Styling for each column (topic section) 
-.main.kanban-layout .kanban-column {
-    /* No specific styling needed for the column itself for now 
-}
+/* Styling for each column (topic section) */
+/* .main.kanban-layout .kanban-column {
+    /* No specific styling needed for the column itself for now */
+/* } */
 
 /* Styling for the topic headers above each column */
 .main.kanban-layout .column-header {
-    font-family: 'Lato', sans-serif;
-    color: #282B30;
-    font-size: 2rem;
-    margin-bottom: 1rem;
-    text-align: center;
+  font-family: 'Lato', sans-serif;
+  color: white;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  text-align: center;
 }
 
 /* Styling for each FAQ item (the sticky note) */
 .main.kanban-layout .faq-item {
-    background-color: #f9f9f9; /* Light background */
-    padding: 15px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15); /* More noticeable shadow */
-    border-radius: 0.5rem;
-    margin-bottom: 1rem; /* Spacing between sticky notes in a column */
-    display: flex;
-    flex-direction: column;
+  background-color: #202124; /* Light background */
+  padding: 15px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15); /* More noticeable shadow */
+  border-radius: 0.5rem;
+  margin-bottom: 1rem; /* Spacing between sticky notes in a column */
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box; /* Ensure padding is included in width */
+  /* Vendor prefixes for older flexbox (likely not needed) */
+  /* -webkit-flex-direction: column;
+     -ms-flex-direction: column; */
 }
 
 /* Styling for the question text and the expand button */
 .main.kanban-layout .faq-item .question {
-    font-family: 'Lato', sans-serif;
-    color: #333;
-    font-size: 1.1rem;
-    margin-top: 0;
-    margin-bottom: 0.5rem;
-    display: flex;
-    justify-content: space-between; /* Keep space between start and end items */
-    align-items: flex-start; /* Align items to the top */
-    flex-wrap: wrap; /* Allow question text to wrap */
-    position: relative; /* Needed for absolute positioning of the button */
-    padding-right: 35px; /* Make space for the button on the right */
+  font-family: 'Lato', sans-serif;
+  color: white;
+  font-size: 1.1rem;
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+  display: flex;
+  justify-content: space-between; /* Keep space between start and end items */
+  align-items: flex-start; /* Align items to the top */
+  flex-wrap: wrap; /* Allow question text to wrap */
+  position: relative; /* Needed for absolute positioning of the button */
+  padding-right: 35px; /* Make space for the button on the right */
 }
 
 /* Styling for the expand button (+) */
 .main.kanban-layout .faq-item .question button.expand-button {
+  background: none;
+  border: 1px solid white;
+  color: white;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  font-size: 1rem;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+  line-height: 1;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  flex-shrink: 0;
+  position: absolute; /* Position the button to the right */
+  top: 0; /* Align to the top of the question */
+  right: 0; /* Position on the right */
+  /* Adjust top slightly for better visual alignment if needed */
+  /* top: 0.2rem; */
+}
+
+.main.kanban-layout .faq-item .question button.expand-button:hover {
+  background-color: #333;
+  color: white;
+}
+
+/* Styling for the answer text (initially hidden) */
+.main.kanban-layout .faq-item .answer {
+  font-family: 'Montserrat', sans-serif;
+  color: white;
+  line-height: 1.6;
+  margin-top: 0.75rem;
+  font-size: 0.9rem;
+  display: none; /* Hidden by default on larger screens */
+}
+
+.main.kanban-layout .faq-item .answer ol {
+  padding-left: 1.5rem;
+  margin-top: 0.5rem;
+}
+
+.main.kanban-layout .faq-item .answer ol li {
+  line-height: 1.6;
+  margin-bottom: 0.3rem;
+}
+
+.main.kanban-layout .faq-item .answer a {
+  color: orange;
+  text-decoration: none;
+  transition: text-decoration 0.3s ease;
+}
+
+.main.kanban-layout .faq-item .answer a:hover {
+  text-decoration: underline;
+}
+
+/* Media query for smaller screens (expandable list) */
+@media (max-width: 768px) {
+  #FAQpage-main {
+    margin-top: 3rem;
+  }
+  .main.kanban-layout {
+    padding-top: 0 !important;
+  }
+
+  .main.kanban-layout .container.main-content {
+    padding-top: 0 !important;
+  }
+
+  .main.kanban-layout .kanban-board {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .main.kanban-layout .kanban-column {
+    margin-bottom: 1.5rem; /* Slightly reduced margin between columns */
+  }
+
+  .main.kanban-layout .column-header {
+    text-align: left;
+    margin-bottom: 0.3rem; /* Slightly reduced margin below header */
+    font-size: 1.8rem; /* Adjust header size for mobile */
+  }
+
+  .main.kanban-layout .faq-item {
+    margin-bottom: 0.75rem; /* Slightly reduced margin between items */
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #ddd; /* Add a subtle border for separation */
+    border-radius: 0.3rem;
+    padding: 10px;
+    box-sizing: border-box; /* Ensure padding is included in width */
+    /* Vendor prefixes for older flexbox (likely not needed) */
+    /* -webkit-flex-direction: column;
+       -ms-flex-direction: column; */
+  }
+
+  .main.kanban-layout .faq-item .question {
+    font-size: 1rem; /* Adjust question size for mobile */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-right: 25px; /* Make space for the button */
+    position: relative;
+  }
+
+  .main.kanban-layout .faq-item .question button.expand-button {
+    display: flex; /* Show the expand button */
     background: none;
     border: 1px solid #333;
     color: #333;
-    width: 25px;
-    height: 25px;
+    width: 20px; /* Smaller button for mobile */
+    height: 20px; /* Smaller button for mobile */
     border-radius: 50%;
-    font-size: 1rem;
+    font-size: 0.8rem;
     cursor: pointer;
-    display: flex;
     justify-content: center;
     align-items: center;
     padding: 0;
     line-height: 1;
     transition: background-color 0.3s ease, color 0.3s ease;
     flex-shrink: 0;
-    position: absolute; /* Position the button to the right */
-    top: 0; /* Align to the top of the question */
-    right: 0; /* Position on the right */
-    /* Adjust top slightly for better visual alignment if needed */
-    /* top: 0.2rem; */
-}
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+    margin-left: 0.5rem;
+  }
 
-.main.kanban-layout .faq-item .question button.expand-button:hover {
+  .main.kanban-layout .faq-item .question button.expand-button:hover {
     background-color: #333;
     color: white;
-}
+  }
 
-/* Styling for the answer text (initially hidden) */
-.main.kanban-layout .faq-item .answer {
-    font-family: 'Montserrat', sans-serif;
-    color: #555;
-    line-height: 1.6;
-    margin-top: 0.75rem;
-    font-size: 0.9rem;
-    display: none; /* Hidden by default on larger screens */
-}
-
-.main.kanban-layout .faq-item .answer ol {
-    padding-left: 1.5rem;
-    margin-top: 0.5rem;
-}
-
-.main.kanban-layout .faq-item .answer ol li {
-    line-height: 1.6;
-    margin-bottom: 0.3rem;
-}
-
-.main.kanban-layout .faq-item .answer a {
-    color: orange;
-    text-decoration: none;
-    transition: text-decoration 0.3s ease;
-}
-
-.main.kanban-layout .faq-item .answer a:hover {
-    text-decoration: underline;
-}
-
-/* Media query for smaller screens (stack layout) */
-/* CSS/FAQ.css */
-
-/* ... your existing CSS ... */
-
-/* Media query for smaller screens (expandable list) */
-@media (max-width: 768px) {
-    #FAQpage-main {
-        margin-top: 3rem;
-    }
-    .main.kanban-layout {
-        padding-top: 0px !important;
-    }
-
-    .main.kanban-layout .container.main-content {
-        padding-top: 0px !important;
-    }
-
-    .main.kanban-layout .kanban-board {
-        display: flex;
-        flex-direction: column;
-    }
-
-    .main.kanban-layout .kanban-column {
-        margin-bottom: 1.5rem; /* Slightly reduced margin between columns */
-    }
-
-    .main.kanban-layout .column-header {
-        text-align: left;
-        margin-bottom: 0.3rem; /* Slightly reduced margin below header */
-        font-size: 1.8rem; /* Adjust header size for mobile */
-    }
-
-    .main.kanban-layout .faq-item {
-        margin-bottom: 0.75rem; /* Slightly reduced margin between items */
-        display: flex;
-        flex-direction: column;
-        border: 1px solid #ddd; /* Add a subtle border for separation */
-        border-radius: 0.3rem;
-        padding: 10px;
-    }
-
-    .main.kanban-layout .faq-item .question {
-        font-size: 1rem; /* Adjust question size for mobile */
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding-right: 25px; /* Make space for the button */
-        position: relative;
-    }
-
-    .main.kanban-layout .faq-item .question button.expand-button {
-        display: flex; /* Show the expand button */
-        background: none;
-        border: 1px solid #333;
-        color: #333;
-        width: 20px; /* Smaller button for mobile */
-        height: 20px; /* Smaller button for mobile */
-        border-radius: 50%;
-        font-size: 0.8rem;
-        cursor: pointer;
-        justify-content: center;
-        align-items: center;
-        padding: 0;
-        line-height: 1;
-        transition: background-color 0.3s ease, color 0.3s ease;
-        flex-shrink: 0;
-        position: absolute;
-        top: 50%;
-        right: 0;
-        transform: translateY(-50%);
-        margin-left: 0.5rem;
-    }
-
-    .main.kanban-layout .faq-item .question button.expand-button:hover {
-        background-color: #333;
-        color: white;
-    }
-
-    .main.kanban-layout .faq-item .answer {
-        display: none; /* Initially hide answers on mobile */
-        padding: 10px 0;
-        font-size: 0.9rem; /* Adjust answer size for mobile */
-        line-height: 1.5;
-    }
+  .main.kanban-layout .faq-item .answer {
+    display: none; /* Initially hide answers on mobile */
+    padding: 10px 0;
+    font-size: 0.9rem; /* Adjust answer size for mobile */
+    line-height: 1.5;
+  }
 }
