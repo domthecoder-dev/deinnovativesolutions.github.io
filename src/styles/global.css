@@ -1,0 +1,55 @@
+/* src/styles/global.css */
+
+/* Root element for consistent box-sizing */
+:root {
+  box-sizing: border-box;
+}
+
+*,
+::before,
+::after {
+  box-sizing: inherit;
+}
+
+/* Continues from above in src/styles/global.css */
+body {
+  margin: 0;
+  padding: 0;
+  margin-top:1rem;
+  background-image: url("../Images/background-color.jpg"); /* IMPORTANT: Path will need adjustment */
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+  font-family: 'Montserrat', sans-serif;
+  color: #F3F3F3;
+  line-height: 1.5;
+  min-height: 100vh;
+}
+
+/* Continues from above in src/styles/global.css */
+
+/* Global main content area styling - Crucial if header is fixed */
+/* This '.main-content-area' class should be applied to the <main> element in your App.js */
+.main-content-area {
+  padding-top: 6.6rem; /* Default for large screens (desktop) */
+  width: 77%; /* Default for large screens */
+  margin: 0 auto; /* Center the main content area */
+  box-sizing: border-box; /* Crucial for consistent sizing */
+}
+
+/* Media Queries for the global main content area */
+@media (max-width: 600px) {
+  .main-content-area {
+    padding-top: 2rem; /* Mobile */
+    padding-bottom: 15px;
+    width: 95%;
+  }
+}
+
+@media (min-width: 601px) and (max-width: 992px) {
+  .main-content-area {
+    padding-top: 3rem; /* Tablet */
+    width: 85%;
+  }
+}

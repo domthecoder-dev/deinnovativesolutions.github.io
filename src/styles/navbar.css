@@ -1,0 +1,247 @@
+/* src/styles/navbar.css */
+
+.header {
+  background-color: #282B30;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 0 1rem;
+  position: fixed;
+  top: 0;
+  z-index: 1000;
+  margin: 0;
+}
+
+#current-page a { /* This might be handled by NavLink, but kept if you need it */
+  color: orange;
+  text-decoration: underline;
+}
+
+.header-inner-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  height: auto;
+  max-width: 1200px;
+  padding: 1rem 1rem;
+  margin: 0 auto;
+}
+
+.logo-container .nav-top-logo {
+  max-width: none;
+  width: auto;
+  height: auto;
+  display: block;
+  margin: 0;
+  max-height: 80px;
+}
+
+.site-title h1 {
+  font-size: 1.5rem;
+  font-family: 'Lato', sans-serif;
+  margin: 0;
+}
+
+/* --- MAIN MENU AND HAMBURGER DEFAULT STATES --- */
+/* By default, assume desktop layout FIRST. */
+.main-menu {
+  display: flex; /* Default: Horizontal desktop menu */
+  font-family: 'Lato', sans-serif;
+}
+
+.main-menu ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex; /* For horizontal list items */
+  align-items: center;
+}
+
+.main-menu li {
+  margin-left: 1.5rem;
+  position: relative;
+}
+
+.main-menu li:first-child {
+  margin-left: 0;
+}
+
+.main-menu ul li a {
+  color: white;
+  text-decoration: none;
+  font-size: 0.9rem;
+  padding: 0.5rem 0;
+  display: block;
+}
+
+.hamburger-menu-toggle {
+  display: none; /* Default: Hide hamburger on desktop */
+  cursor: pointer;
+  padding: 0.5rem;
+}
+
+.hamburger-menu-toggle span {
+  display: block;
+  height: 3px;
+  width: 25px;
+  background-color: white;
+  margin-bottom: 0.3rem;
+  transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+}
+
+
+/* --- QUOTE BUTTON --- */
+.quote-button-li {
+  margin-left: 2rem;
+}
+
+.get-quote-button {
+  background-color: orange;
+  color: white;
+  padding: 0.75rem 0.5rem !important;
+  border-radius: 1.5rem;
+  text-decoration: none;
+  font-weight: bold;
+  box-shadow: 0 0 0 rgba(255, 165, 0, 0.7);
+  animation: pulse 1.5s infinite;
+  font-size: 1em;
+  display: inline-block;
+}
+
+.quote-link { /* This one seems to be hidden on desktop and shown on mobile */
+  display: none; /* Hide by default */
+  color: white;
+}
+
+@keyframes pulse {
+  0% { box-shadow: 0 0 0 0 rgba(255, 165, 0, 0.7); }
+  70% { box-shadow: 0 0 0 10px rgba(255, 165, 0, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(255, 165, 0, 0); }
+}
+
+.get-quote-button:hover {
+  opacity: 0.9;
+}
+
+/* --- MOBILE/TABLET SPECIFIC STYLES --- */
+/* These rules should only activate below a certain breakpoint */
+
+@media (max-width: 992px) { /* This breakpoint handles tablets and smaller */
+  .header {
+    position: relative; /* Change header position for mobile menu absolute positioning */
+  }
+
+  .main-menu {
+    /* Menu is hidden by default in mobile/tablet view.
+       It will only show when 'open' class is applied by JS. */
+    display: none;
+    flex-direction: column;
+    position: absolute; /* Position relative to the header */
+    top: 100%; /* Below the header */
+    left: 0;
+    background-color: #282B30; /* Background for dropdown */
+    width: 100%; /* Full width */
+    z-index: 10;
+    align-items: flex-start; /* Align items to the left */
+    padding: 1rem;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2); /* Optional: add shadow */
+  }
+
+  .main-menu.open {
+    display: flex; /* Show menu when open! */
+  }
+
+  .main-menu ul {
+    flex-direction: column; /* Stack items vertically */
+    width: 100%;
+  }
+
+  .main-menu ul li {
+    margin-left: 0;
+    margin-bottom: 0.5rem;
+    width: 100%;
+  }
+
+  .main-menu ul li a {
+    padding: 0.75rem 0;
+    display: block;
+    text-align: center; /* Center links in dropdown if desired */
+  }
+
+  .main-menu.open ul li:last-child a {
+    border-bottom: none;
+  }
+
+  .hamburger-menu-toggle {
+    display: block; /* Show hamburger icon in mobile/tablet view */
+  }
+
+  .logo-container .nav-top-logo {
+    /* Use the mobile logo */
+    content: url(../Images/mobile-logo.png); /* Adjust path if needed */
+    max-width: 80px; /* Or 180px for larger tablets */
+    display: block;
+  }
+
+  /* Specific styles for smaller screens (e.g., phones) within this breakpoint */
+  @media (max-width: 600px) {
+    .logo-container .nav-top-logo {
+      max-width: 80px; /* Smaller logo for phones */
+    }
+  }
+
+  /* Styles for the quote links in mobile/tablet */
+  .quote-link {
+    display: block; /* Show the text-based quote link */
+  }
+
+  .quote-button-li {
+    display: none; /* Hide the button-style quote link */
+  }
+}
+
+/* --- HAMBURGER ANIMATION --- */
+.hamburger-menu-toggle.open span:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+}
+
+.hamburger-menu-toggle.open span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger-menu-toggle.open span:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg);
+}
+
+/* Reset for desktop large screens where menu is always open */
+/* This media query ensures desktop view is always correct */
+@media (min-width: 993px) {
+    .main-menu {
+        display: flex !important; /* Force desktop menu visible */
+        flex-direction: row; /* Ensure horizontal layout */
+        position: static; /* Reset position */
+        background-color: transparent; /* Reset background */
+        width: auto; /* Reset width */
+        padding: 0; /* Reset padding */
+        box-shadow: none; /* Remove shadow */
+    }
+
+    .main-menu ul {
+        flex-direction: row; /* Ensure list items are horizontal */
+    }
+
+    .hamburger-menu-toggle {
+        display: none !important; /* Force hamburger hidden */
+    }
+
+    .quote-link {
+      display: none; /* Hide the text quote link on desktop */
+    }
+
+    .quote-button-li {
+      display: block; /* Show the button quote link on desktop */
+    }
+}

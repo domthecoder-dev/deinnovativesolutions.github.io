@@ -1,0 +1,250 @@
+/* src/styles/pricing.css (or a more specific component CSS file like PricingPage.css) */
+
+.pricing-main { /* Changed from `main` tag to class if not already global */
+  display: flex;
+  flex-direction: column; /* Stack sections vertically */
+  align-items: center; /* Center items horizontally within main */
+  padding-top: 6.6rem; /* Adjust top padding for fixed header */
+  padding-bottom: 2rem;
+  width: 90%; /* Allow some margin on the sides */
+  margin: 0 auto; /* Center the main container itself */
+  box-sizing: border-box; /* Include padding and border in width */
+}
+
+/* Section Title */
+#title {
+  font-size: 2em;
+  margin-bottom: 1em;
+  text-align: center;
+}
+
+/* Tier Container - Flexbox for columns */
+.tier-container {
+  display: flex;
+  justify-content: center; /* Center the columns horizontally */
+  gap: 30px !important; /* Space between the columns */
+  padding: 20px;
+  flex-wrap: wrap; /* Allow columns to wrap on smaller screens */
+}
+
+/* Individual Tier Columns */
+.tier-column {
+  background-color: #202124;
+  border-radius: 8px;
+  padding: 20px;
+  text-align: center;
+  width: 300px; /* Base width for columns */
+  box-sizing: border-box; /* Ensure padding is included in width */
+  flex-shrink: 0; /* Prevent shrinking below content size */
+  flex-grow: 0; /* Prevent growing unnecessarily */
+  position: relative; /* For positioning the badge */
+  color: white; /* Assuming text inside tiers is white */
+}
+
+/* Recommended Tier */
+.tier-column.recommended {
+  transform: scale(1.1); /* Make the middle column bigger */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Add a subtle shadow */
+  z-index: 1; /* Bring it slightly forward */
+}
+
+/* Badge for Recommended Tier */
+.badge {
+  background-color: #ff6f61; /* Example color */
+  color: white;
+  padding: 8px 12px;
+  border-radius: 20px;
+  position: absolute;
+  top: -15px; /* Adjust as needed */
+  right: 10px; /* Adjust as needed */
+  font-size: 0.8em;
+  white-space: nowrap; /* Prevent text wrapping */
+}
+
+/* Headings within Tier Columns */
+.tier-column h3 {
+  margin-top: 0;
+  margin-bottom: 15px;
+  font-size: 1.8em;
+  color: orange; /* Example color for headings */
+}
+
+/* Paragraph text within Tier Columns */
+.tier-column p {
+  font-size: 0.95em;
+  line-height: 1.5;
+  margin-bottom: 20px;
+}
+
+/* Main UL within Tier Columns */
+.tier-column ul {
+  list-style: none; /* Ensure no default bullets */
+  padding: 0;        /* Remove default padding from the UL */
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+/* List Items within Tier Columns (top-level items) */
+.tier-column ul li {
+  padding: 8px 0;
+  border-bottom: 1px solid #ddd;
+  font-size: 1em;
+  line-height: 1.3;
+}
+
+.tier-column ul li:last-child {
+  border-bottom: none;
+}
+
+/* Nested List Container - This div wraps the inner UL */
+.normal-list-container {
+  max-width: 90%;
+  margin: 5px auto 0; /* Adjust vertical margin as needed */
+  /* If you want the inner list to align perfectly with the parent li's text,
+     you might remove 'margin: 5px auto 0;' and rely on the UL's padding. */
+}
+
+/* Nested UL - inner lists (e.g., for pages, SEO, support details) */
+.normal-list {
+  list-style: none; /* REMOVE BULLETS: Set to 'none' to remove default disc bullets */
+  padding: 0;        /* REMOVE INDENTATION: Remove default padding-left */
+  margin: 0;         /* REMOVE DEFAULT MARGIN: Remove default margin from the UL */
+}
+
+/* Nested List Items - inner list items */
+.normal-list .normal-list-item {
+  padding: 0; /* REMOVE VERTICAL PADDING: Set to 0 to remove vertical space */
+  border-bottom: none;
+  font-size: 0.97em;
+  line-height: 1.2; /* Adjust line-height to reduce vertical space between lines */
+  /* If you want the bullet back, but no indentation, use this: */
+  /* list-style: disc;
+     margin-left: 1em; */ /* Adjust margin-left for indentation if list-style is not 'none' */
+}
+
+.normal-list .normal-list-item:last-child {
+  border-bottom: none;
+  margin-bottom: 0 !important;
+}
+
+/* Button Styles */
+.tier-column button {
+  background-color: #007bff; /* Example button color */
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 1em;
+  cursor: pointer;
+  margin-top: 20px; /* Space above button */
+  transition: background-color 0.3s ease;
+}
+
+.tier-column button:hover {
+  background-color: #0056b3; /* Darker blue on hover */
+}
+
+/* Specific spacing for tier content to maintain visual balance */
+.Foundation button {
+  margin-top: 1em; /* Keep existing spacing */
+}
+
+.growth p {
+  margin-top: 4.5em; /* Keep existing spacing */
+}
+
+.growth button {
+  margin-top: 2em; /* Keep existing spacing */
+}
+
+.evolved button {
+  margin-top: 6.5em; /* Keep existing spacing */
+}
+
+
+/* Get A Quote Section */
+.get-a-quote {
+  margin-top: 5em;
+  margin-bottom: 3em;
+  text-align: center;
+}
+
+.get-a-quote .button {
+  padding: 1em 3em;
+  background-color: orange;
+  font-size: 1.5em;
+  font-weight: bold;
+  border: 1px solid orange;
+  border-radius: 15px;
+  color: white;
+  text-decoration: none;
+  cursor: pointer;
+  display: inline-block;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.get-a-quote .button:hover {
+  text-decoration: underline;
+  background-color: darkorange;
+  box-shadow: 0 4px 8px rgba(255, 111, 97, 0.5);
+}
+
+/* --- Responsive Adjustments --- */
+@media (max-width: 992px) { /* Adjust breakpoint for larger tablets/smaller desktops */
+  .tier-container {
+    flex-direction: column; /* Stack columns on smaller screens */
+    align-items: center;
+  }
+
+  .tier-column {
+    width: 90%; /* Take up more width on smaller screens */
+    margin-bottom: 20px; /* Space between stacked columns */
+    max-width: 400px; /* Prevent columns from getting too wide on large tablets */
+  }
+
+  .tier-column.recommended {
+    transform: scale(1); /* Reset scale on smaller screens */
+    box-shadow: none; /* Remove extra shadow when not scaled */
+  }
+
+  .badge {
+    top: -10px; /* Adjust badge position for non-scaled column */
+    right: 10px;
+  }
+
+  /* Reset spacing adjustments for mobile if desired, or keep as is */
+  .Foundation ul,
+  .growth p,
+  .growth ul,
+  .evolved ul {
+    margin-bottom: 20px; /* Standardize spacing on mobile */
+    margin-top: 0;
+  }
+
+  .get-a-quote .button {
+    padding: 0.8em 2em;
+    font-size: 1.2em;
+  }
+}
+
+/* Further adjustments for very small mobile screens if needed */
+@media (max-width: 480px) {
+  .pricing-main {
+    padding: 6rem 1rem 1rem; /* Adjust padding for very small screens */
+    width: 100%;
+  }
+
+  .tier-column {
+    width: 95%; /* Even more width on smallest screens */
+    padding: 15px;
+  }
+
+  .tier-column h3 {
+    font-size: 1.5em;
+  }
+
+  .get-a-quote .button {
+    font-size: 1em;
+    padding: 0.7em 1.5em;
+  }
+}
