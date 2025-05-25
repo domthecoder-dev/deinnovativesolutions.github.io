@@ -1,6 +1,6 @@
 // src/components/FaqItem.js
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom'; // In case links are inside answers
+
 
 function FaqItem({ question, answerHtml }) {
   const [isOpen, setIsOpen] = useState(false);

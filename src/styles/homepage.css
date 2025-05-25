@@ -6,13 +6,19 @@
    For now, we'll keep it as is, but be mindful of potential overrides. */
 .Home-Page-main {
   display: flex;
-  flex-direction: column; /* Stack sections vertically */
-  align-items: center; /* Center items horizontally within .Home-Page-main */
-  padding-top: 7rem; /* Adjust top padding for fixed header */
+  flex-direction: column;
+  /* Stack sections vertically */
+  align-items: center;
+  /* Center items horizontally within .Home-Page-main */
+  padding-top: 7rem;
+  /* Adjust top padding for fixed header */
   padding-bottom: 2rem;
-  width: 90%; /* Allow some margin on the sides */
-  margin: 0 auto; /* Center the .Home-Page-main container itself */
-  box-sizing: border-box; /* Include padding and border in width */
+  width: 90%;
+  /* Allow some margin on the sides */
+  margin: 0 auto;
+  /* Center the .Home-Page-main container itself */
+  box-sizing: border-box;
+  /* Include padding and border in width */
 }
 
 /* Hero Section */
@@ -34,14 +40,16 @@
   font-size: 2.5rem;
   font-family: 'Lato', sans-serif;
   margin-bottom: 1rem;
-  color: White; /* Darker heading */
+  color: White;
+  /* Darker heading */
 }
 
 .hero-content p {
   font-size: 1.1rem;
   line-height: 1.6;
   margin-bottom: 2rem;
-  color: rgb(211, 211, 211); /* Slightly softer text */
+  color: rgb(211, 211, 211);
+  /* Slightly softer text */
 }
 
 .hero-buttons a {
@@ -122,7 +130,8 @@
   display: inline-block;
   width: 2rem;
   height: 2rem;
-  background-color: orange; /* Placeholder for icon color */
+  background-color: orange;
+  /* Placeholder for icon color */
   border-radius: 50%;
   margin-right: 1rem;
   vertical-align: middle;
@@ -141,6 +150,53 @@
   line-height: 1.6;
   color: rgb(222, 222, 222);
 }
+
+/*Testimonels*/
+.testimonels h2 {
+  padding-top: 4rem;
+}
+
+.Test {
+  background-color: #202124;
+  border-radius: 0.5rem;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  margin-bottom: 2rem;
+}
+
+.Test-Header {
+  text-align: left;
+  padding-top: 1rem !important;
+  margin-left: 2rem;
+  margin-bottom: 0 !important;
+  padding-bottom: 0 !important;
+  font-size: 2.5rem !important;
+}
+
+.Test-Relations {
+  text-align: left;
+  margin-left: 2rem;
+  padding-top: 0 !important;
+  margin-top: 0 !important;
+  margin-bottom: 0.5rem !important;
+  font-size: 1.2rem !important;
+  font-weight: 400;
+}
+
+.Test-Comment {
+  text-align: justify;
+  margin-left: 2rem;
+  margin-right: 2rem;
+  margin-top: 0 !important;
+  font-style: italic;
+  font-size: 1.5rem !important;
+  padding: 0 !important;
+  padding-bottom: 2rem !important;
+}
+
+/*<div className="Test-1">
+            <h2 className="Test-Header">Samantha</h2>
+            <h2 claaName="Test-Relations">CEO and Founder of The Digital Teapot</h2>
+            <p className="Test-Comment">*/
 
 /* Our Approach Section */
 .our-approach {
@@ -174,7 +230,8 @@
   display: block;
   width: 3rem;
   height: 3rem;
-  background-color: orange; /* Placeholder for icon color */
+  background-color: orange;
+  /* Placeholder for icon color */
   border-radius: 50%;
   margin: 0 auto 1rem;
 }
@@ -312,4 +369,22 @@
     flex-direction: column;
     align-items: center;
   }
+
+  .Test-Header {
+    text-align: center;
+    margin: 0.45rem;
+  }
+
+  .Test-Relations {
+    text-align: center;
+    margin: 0.45rem;
+  }
+
+  .Test-Comment {
+    text-align: center;
+    margin: 0.45rem;
+  }
+
 }
+
+/*.testimonels h2 \\ .Test \\ .Test-Header \\ .Test-Relations \\ .Test-Comment*/

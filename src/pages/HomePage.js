@@ -57,6 +57,18 @@ function HomePage() {
               offering personalised solutions every step of the way.</p>
           </li>
         </ul>
+        <div class="testimonels">
+          <h2>Don't take our word for it, hear from out clients</h2>
+          <div className="Test">
+            <h2 className="Test-Header">Samantha</h2>
+            <h2 className="Test-Relations">CEO and Founder of The Digital Teapot</h2>
+            <p className="Test-Comment">
+              "Dominic is always quick to respond and communicates really well. He's friendly, professional, and has a strong work ethic.
+              He's great at solving problems efficiently and consistently goes above and beyond. His turnaround time is also impressive.
+              It was a pleasure working with him and will definitely be giving him  more projects."
+            </p>
+          </div>
+        </div>
       </section>
 
       <section id="our-approach" className="our-approach">
