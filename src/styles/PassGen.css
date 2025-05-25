@@ -9,6 +9,7 @@
     padding-bottom: 2rem;
     width: 90%; /* Allow some margin on the sides */
     margin: 0 auto; /* Center the main container itself */
+    margin-top: 2.5em !important;
     box-sizing: border-box; /* Include padding and border in width */
 }
 
