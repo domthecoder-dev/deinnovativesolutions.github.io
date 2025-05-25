@@ -56,7 +56,7 @@ function PricingPage() {
               </ul>
             </div> {/* End tier-features */}
             <div className="tier-price-range foundation-price"> {/* NEW: Dedicated div for price */}
-              <p>From R2'000 to R8'000</p>
+              <p>From R2000 to R8000</p>
             </div>
           </div>
 
@@ -88,7 +88,7 @@ function PricingPage() {
               </ul>
             </div>
             <div className="tier-price-range growth-price">
-              <p>From R9'000 to R19'000</p>
+              <p>From R9000 to R19000</p>
             </div>
           </div>
 
@@ -119,7 +119,7 @@ function PricingPage() {
               </ul>
             </div>
             <div className="tier-price-range evolved-price">
-              <p>From R20'000+</p>
+              <p>From R20000+</p>
             </div>
           </div>
         </div> {/* End tier-container */}
