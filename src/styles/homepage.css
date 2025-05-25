@@ -444,6 +444,10 @@
     /* Disable gradient for desktop */
   }
 
+  .mobile-br {
+    display:none;
+  }
+  
   .hero-content {
     flex: 1;
     /* Allow content to take up space */

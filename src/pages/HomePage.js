@@ -20,7 +20,7 @@ function HomePage() {
       <section id="hero-section" className="hero">
         <div className="hero-content">
           <h1>Your Vision, Beautifully Built Online.</h1>
-          <p>Stop settling for basic. DE Innovative Solutions crafts high-quality, custom websites tailored to
+          <p>Stop settling for basic.<br className='mobile-br'/> DE Innovative Solutions crafts high-quality, custom websites tailored to
             your exact needs, whether through meticulous hardcoding, dynamic WordPress, or sleek Wix.</p>
           <div className="hero-buttons">
             <Link to="/quote" className="get-quote-button button primary">Get Your Personalised Quote Today</Link>
