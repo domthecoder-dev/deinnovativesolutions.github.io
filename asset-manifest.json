@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/static/css/main.2db0367d.css",
+    "main.css": "/static/css/main.7a67f9fd.css",
     "main.js": "/static/js/main.77f589aa.js",
     "static/media/article2-laptop-mobile.jpeg": "/static/media/article2-laptop-mobile.4185ceaa1cf0636ce26d.jpeg",
     "static/media/PasswordArticle.jpeg": "/static/media/PasswordArticle.b9661e87ba8ad6821845.jpeg",
@@ -13,11 +13,11 @@
     "static/media/Dominic-Avatar.jpg": "/static/media/Dominic-Avatar.bf9904da66beba7e24ba.jpg",
     "static/media/Logo-Rect.png": "/static/media/Logo-Rect.940b5a65295eb267788f.png",
     "index.html": "/index.html",
-    "main.2db0367d.css.map": "/static/css/main.2db0367d.css.map",
+    "main.7a67f9fd.css.map": "/static/css/main.7a67f9fd.css.map",
     "main.77f589aa.js.map": "/static/js/main.77f589aa.js.map"
   },
   "entrypoints": [
-    "static/css/main.2db0367d.css",
+    "static/css/main.7a67f9fd.css",
     "static/js/main.77f589aa.js"
   ]
 }
