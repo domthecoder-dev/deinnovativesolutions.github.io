@@ -4,88 +4,84 @@ import Sam from '../Images/Samantha-Avatar.jpg';
 import Dom from '../Images/Dominic-Avatar.jpg';
 import Image2 from '../Images/Girlsittingatcomputercoding.jpg';
 import Image3 from '../Images/HandsCodingOnLaptop.jpg';
-import { Link } from 'react-router-dom'; // Import Link for navigation
-import '../styles/AboutPage.css'; // Import the About Us page specific CSS
-
-// Assuming your images are in the public/Images folder
-// If they are in src/Images, you would import them like:
-// import samanthaAvatar from '../Images/Samantha-Avatar.jpg';
-// import dominicAvatar from '../Images/Dominic-Avatar.jpg';
-// import girlCoding from '../Images/Girlsittingatcomputercoding.jpg';
-// import handsCoding from '../Images/HandsCodingOnLaptop.jpg';
+import { Link } from 'react-router-dom';
+import '../styles/AboutPage.css';
+import RevealOnScroll from '../compontents/RevealOnScroll'; // For 'Websites We Build' mobile animation
+import '../styles/RevealOnScroll.css';
+import FlipCard from '../compontents/FlipCard'; // NEW: Import FlipCard
+import '../styles/FlipCard.css'; // NEW: Import FlipCard CSS
+import useMediaQuery from '../compontents/hooks/useMediaQuery'; // Import useMediaQuery for conditional rendering
 
 function AboutPage() {
+  const isMobile = useMediaQuery('(max-width: 768px)'); // Define mobile breakpoint
+
   return (
-    // React components usually return a single root element.
-    // We'll wrap all your sections in a div to align with the main structure in App.js
-    <div id="aboutuspage-main-wrapper" className="about-us-main"> {/* Use the class for main styling */}
+    <div id="aboutuspage-main-wrapper" className="about-us-main">
       <div className="container">
         <section id="Meet-the-team">
           <h1 className="section-header">Meet the Team</h1>
-          <div className="team-member">
-            <div className="avatar-container">
-              {/* Image paths adjusted for public folder */}
-              <img src={Sam} className='avatar' alt="Samantha Avatar" />
-            </div>
-            <div className="bio">
-              <h3>Samantha</h3>
-              <p className="body-text">
-                Your dedicated point of contact and the administrator
-                who keeps our web development process seamless.
-                She is committed to supporting you through every step,
-                ensuring you get the ideal website to meet your online
-                aspirations...
-              </p>
-            </div>
-          </div>
-          <div className="team-member">
-            <div className="avatar-container">
-              {/* Image paths adjusted for public folder */}
-              <img src={Dom} className="avatar" alt="Dominic Avatar" />
-            </div>
-            <div className="bio">
-              <h3>Dominic</h3>
-              <p className="body-text">
-                Your go-to Website Developer for personalised solutions. He is committed to hard
-                work and building a website that perfectly reflects your preferences.
-              </p>
-            </div>
+          <div className="team-members-grid"> {/* NEW: Grid for team members */}
+            {/* Samantha's Card */}
+            <FlipCard
+              className="team-flip-card" // Specific class for team cards
+              frontContent={
+                <>
+                  <div className="avatar-container">
+                    <img src={Sam} className='avatar' alt="Samantha Avatar" />
+                  </div>
+                  <h3>Samantha</h3>
+                  <p>Client Liaison & Admin</p>
+                </>
+              }
+              backContent={
+                <>
+                  <p>Your dedicated point of contact, ensuring seamless communication and a smooth web development journey from start to finish.</p>
+                </>
+              }
+            />
+
+            {/* Dominic's Card */}
+            <FlipCard
+              className="team-flip-card" // Specific class for team cards
+              frontContent={
+                <>
+                  <div className="avatar-container">
+                    <img src={Dom} className="avatar" alt="Dominic Avatar" />
+                  </div>
+                  <h3>Dominic</h3>
+                  <p>Lead Website Developer</p>
+                </>
+              }
+              backContent={
+                <>
+                  <p>The expert behind the code, crafting personalized and cutting-edge websites that perfectly reflect your vision and goals.</p>
+                </>
+              }
+            />
           </div>
         </section>
 
         <section className="about-intro">
           <div className="image-column">
-            {/* Image paths adjusted for public folder */}
             <img src={Image2} id="Img-GirlCoding" alt="Girl coding on a computer" />
           </div>
           <div className="text-column">
             <h1 className="page-header">Crafting Your Digital Presence with Expertise and Care</h1>
+            {/* CONDENSED TEXT */}
             <p className="body-text">
-              At DE Innovative Solutions, we are passionate about building effective and
-              visually stunning websites that help our clients achieve their
-              online goals. Unlike DIY platforms, we offer a personalised,
-              hands-on approach, leveraging the power of WordPress and reliable
-              hosting from Xneelo to create a unique digital presence tailored
-              to your specific needs.
+              At DE Innovative Solutions, we craft stunning, effective websites tailored to your online goals.
+              We offer a personalized, hands-on approach, leveraging powerful platforms like WordPress and reliable
+              hosting to create your unique digital presence.
             </p>
             <p className="body-text">
-              For over five years, I, Dominic the founder of DE Innovative Solutions, have been dedicated
-              to the art and science of web development. I believe that a website is
-              more than just a digital address – it is a crucial tool for communication,
-              growth, and establishing your brand identity. That is why I go beyond the
-              basics, utilizing coding languages like CSS and HTML to implement advanced
-              meta tags for enhanced SEO and to create truly personalised and customised
-              designs that stand out.
+              With over five years dedicated to web development, Dominic (founder of DE Innovative Solutions), believes a
+              website is a crucial tool for growth and brand identity. We go beyond basics, using advanced coding
+              (CSS, HTML) for enhanced SEO and truly customized, standout designs.
             </p>
             <p className="body-text">
-              My commitment to excellence is backed by certifications in Responsive Web Design
-              and JavaScript from freeCodeCamp.org, ensuring that your website is not only beautiful
-              but also user-friendly across all devices and built with modern web standards in mind.
-            </p>
-            <p className="body-text">
-              Understanding that exceptional customer care is paramount, I work closely with a dedicated
-              assistant who is committed to providing you with seamless support and addressing any questions
-              or concerns you may have throughout the website development process and beyond.
+              Backed by certifications in Responsive Web Design and JavaScript, we ensure your site is beautiful,
+              user-friendly across all devices, and built to modern web standards. Our commitment extends to
+              exceptional customer care, with dedicated support throughout your website journey.
             </p>
           </div>
         </section>
@@ -94,17 +90,16 @@ function AboutPage() {
           <div className="text-column">
             <h1 className="section-header">What Sets Us Apart:</h1>
             <ul className="features-list">
-              <li>Expert WordPress Development: We harness the flexibility and power of WordPress to build robust and scalable websites.</li>
-              <li>Reliable Xneelo Hosting: We partner with Xneelo, a trusted hosting provider, to ensure your website is fast, secure, and always accessible.</li>
-              <li>Personalized Customization: We go beyond themes, using CSS and HTML to create unique designs and implement specific functionalities tailored to your brand.</li>
-              <li>SEO Optimization from the Ground Up: We integrate strategic meta tags and semantic HTML to improve your website's visibility in search engine results.</li>
-              <li>Responsive Design Expertise: Your website will look and function flawlessly on desktops, tablets, and mobile devices.</li>
-              <li>Dedicated Customer Care: Our team is committed to providing you with exceptional support every step of the way.</li>
-              <li>Proven Experience: With over five years of experience, we have a track record of delivering successful web solutions.</li>
+              <li>**Expert WordPress Development:** Robust and scalable websites.</li>
+              <li>**Reliable Xneelo Hosting:** Fast, secure, always accessible.</li>
+              <li>**Personalized Customization:** Unique designs, tailored functionalities.</li>
+              <li>**SEO Optimization:** Strategic meta tags, improved search visibility.</li>
+              <li>**Responsive Design:** Flawless across all devices.</li>
+              <li>**Dedicated Customer Care:** Exceptional support, every step.</li>
+              <li>**Proven Experience:** Over five years delivering successful solutions.</li>
             </ul>
           </div>
           <div className="image-column">
-            {/* Image paths adjusted for public folder */}
             <img src={Image3} className="coding-laptop-img" alt="Hands coding on a laptop" />
           </div>
         </section>
@@ -113,15 +108,99 @@ function AboutPage() {
           <h1 className="section-header">What Websites Do we Build?</h1>
           <p className="body-text">
             We build all kinds of websites, including:
-          </p> {/* Close the paragraph here */}
-          <ul className="list"> {/* Now <ul> is a sibling of <p> */}
-            <li className="list-item">Blogs</li>
-            <li className="list-item">Personal Profiles</li>
-            <li className="list-item">Galleries</li>
-            <li className="list-item">E-Commerce</li>
-            <li className="list-item">Contact Forms</li>
-            <li className="list-item">And More!</li>
-          </ul>
+          </p>
+          <div className="websites-grid"> {/* NEW: Grid for website types */}
+            {/* Using FlipCard for desktop, RevealOnScroll + basic li for mobile */}
+            {/* Blog Card */}
+            {isMobile ? (
+              <RevealOnScroll delay={0}>
+                <li className="list-item mobile-website-item">
+                  <span className="website-icon">📄</span> Blogs
+                </li>
+              </RevealOnScroll>
+            ) : (
+              <FlipCard
+                className="website-flip-card"
+                frontContent={<h3>Blogs</h3>}
+                backContent={<p>Share your stories, expertise, and updates with a beautifully designed, easy-to-manage blog.</p>}
+              />
+            )}
+
+            {/* Personal Profiles Card */}
+            {isMobile ? (
+              <RevealOnScroll delay={200}>
+                <li className="list-item mobile-website-item">
+                  <span className="website-icon">👤</span> Personal Profiles
+                </li>
+              </RevealOnScroll>
+            ) : (
+              <FlipCard
+                className="website-flip-card"
+                frontContent={<h3>Personal Profiles</h3>}
+                backContent={<p>Showcase your portfolio, resume, or personal brand with a sleek and professional online presence.</p>}
+              />
+            )}
+
+            {/* Galleries Card */}
+            {isMobile ? (
+              <RevealOnScroll delay={300}>
+                <li className="list-item mobile-website-item">
+                  <span className="website-icon">🖼️</span> Galleries
+                </li>
+              </RevealOnScroll>
+            ) : (
+              <FlipCard
+                className="website-flip-card"
+                frontContent={<h3>Galleries</h3>}
+                backContent={<p>Visually stunning galleries to highlight your photography, artwork, or product showcases effectively.</p>}
+              />
+            )}
+
+            {/* E-Commerce Card */}
+            {isMobile ? (
+              <RevealOnScroll delay={400}>
+                <li className="list-item mobile-website-item">
+                  <span className="website-icon">🛒</span> E-Commerce
+                </li>
+              </RevealOnScroll>
+            ) : (
+              <FlipCard
+                className="website-flip-card"
+                frontContent={<h3>E-Commerce</h3>}
+                backContent={<p>Launch your online store with secure payment gateways and a seamless shopping experience for your customers.</p>}
+              />
+            )}
+
+            {/* Contact Forms Card */}
+            {isMobile ? (
+              <RevealOnScroll delay={500}>
+                <li className="list-item mobile-website-item">
+                  <span className="website-icon">✉️</span> Contact Forms
+                </li>
+              </RevealOnScroll>
+            ) : (
+              <FlipCard
+                className="website-flip-card"
+                frontContent={<h3>Contact Forms</h3>}
+                backContent={<p>Customized and efficient contact forms to connect with your audience and streamline inquiries directly to you.</p>}
+              />
+            )}
+
+            {/* And More! Card */}
+            {isMobile ? (
+              <RevealOnScroll delay={600}>
+                <li className="list-item mobile-website-item">
+                  <span className="website-icon">➕</span> And More!
+                </li>
+              </RevealOnScroll>
+            ) : (
+              <FlipCard
+                className="website-flip-card"
+                frontContent={<h3>And More!</h3>}
+                backContent={<p>We're versatile! If you have a unique idea, we can build a custom solution to bring your vision to life online.</p>}
+              />
+            )}
+          </div> {/* End websites-grid */}
           <p className="body-text">
             Contact us for your <Link to="/quote">personalised quote</Link>
           </p>

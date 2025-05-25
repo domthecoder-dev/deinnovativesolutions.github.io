@@ -1,6 +1,7 @@
 // src/components/Navbar.js
 import React, { useState } from 'react'; // Import useState for managing component state (e.g., hamburger menu open/close)
 import Logo from '../Images/Logo-Rect.png';
+import MobileLogo from '../Images/mobile-logo.png';
 import { Link, NavLink } from 'react-router-dom'; // Import Link/NavLink for navigation
 import '../styles/navbar.css'; // Import the Navbar-specific CSS we broke down
 
